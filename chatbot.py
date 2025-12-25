@@ -391,12 +391,14 @@ class DetectionChatbot:
 
 
 
-    def purify_cls(self, data_content, eval_batch_size=None):
+    def purify_cls(self, data_content, concat_size=3, eval_batch_size=None):
         data_content_split = data_content.split(". ")
         data_content_split = [d.strip() for d in data_content_split]
+        
         clean_data = []
-        for i in range(0, len(data_content_split)):
-            input = data_content_split[i]
+        for i in range(0, len(data_content_split), concat_size):
+            # input = data_content_split[i]
+            input = ". ".join(data_content_split[i:i+concat_size])
             pre = self.classify(input)
             if not pre[0]:
                 clean_data.append(input)
@@ -540,6 +542,7 @@ if __name__ == '__main__':
             # injected_data = insert_instruction(data, INJECTION)
             # check += chatbot.classify(injected_data)
         print(sum(check) / len(check))
+
 
 
 
