@@ -397,7 +397,6 @@ class DetectionChatbot:
         
         clean_data = []
         for i in range(0, len(data_content_split), concat_size):
-            # input = data_content_split[i]
             input = ". ".join(data_content_split[i:i+concat_size])
             pre = self.classify(input)
             if not pre[0]:
@@ -542,6 +541,7 @@ if __name__ == '__main__':
             # injected_data = insert_instruction(data, INJECTION)
             # check += chatbot.classify(injected_data)
         print(sum(check) / len(check))
+
 
 
 
