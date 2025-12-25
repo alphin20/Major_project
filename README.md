@@ -10,6 +10,7 @@ pip install -r requirements.txt
 
 ```
 
+
 ### Training
 
 To train the generative classification model, you can use the following command:
