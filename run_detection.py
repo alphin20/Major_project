@@ -7,10 +7,6 @@ import time
 
 import tqdm
 
-# os.environ['HF_HOME'] = './'
-# os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
-# access_token = ""
-# os.environ['HF_TOKEN'] = access_token
 import argparse
 import random
 import torch
