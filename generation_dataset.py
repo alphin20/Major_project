@@ -11,7 +11,6 @@ from torch.utils.data import Dataset
 from tqdm import tqdm
 
 import utils
-
 IGNORE_INDEX = -100
 # DEFAULT_PAD_TOKEN = "[PAD]"
 # DEFAULT_EOS_TOKEN = "</s>"
