@@ -132,8 +132,12 @@ def set_seeds(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_path', type=str, default='gpt-4o')
-    default='data/crafted_instruction_data_alpaca.json'
-    parser.add_argument("--injected_instruction_data_path", type=str, default="../data/crafted_instruction_data_davinci.json")
+
+    parser.add_argument(
+        '--user_data_path',
+        type=str,
+        default='data/crafted_instruction_data_alpaca.json'
+    )   
     parser.add_argument("--filter_bot", type=str, default=None)
     parser.add_argument("--extract_bot", type=str, default=None)
     parser.add_argument('--defense', type=str, default=['filter'], nargs='+')
