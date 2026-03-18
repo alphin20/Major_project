@@ -84,9 +84,8 @@ def test(args):
                 if "prompt" in args.model_path.lower():
                     d_item['input'] = model.tokenizer.convert_tokens_to_string(model.tokenizer.tokenize(d_item["input"])[:384])
 
-                if d_item['input'][-1] != '.' and d_item['input'][-1] != '!' and d_item['input'][-1] != '?': d_item[
-                    'input'] += '.'
-
+                if d_item['input'] and d_item['input'][-1] not in ['.', '!', '?']:
+                    d_item['input'] += '.'
                 d_item['input'] += ' '
                 d_item = eval(a)(d_item, side)
                 if args.injection_ins == "no":
